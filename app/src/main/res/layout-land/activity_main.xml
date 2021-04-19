@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/mainScreen"
+    tools:context=".MainActivity">
+
+<TextView
+    android:id="@+id/app_name"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="@string/app_name"
+    android:textAlignment="center"/>
+
+<GridLayout
+    android:id="@+id/grid_global"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:columnCount="3"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="fill"
+        android:layout_columnWeight="1"
+        android:orientation="vertical">
+
+        <GridLayout
+            android:id="@+id/grid_menu"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:columnCount="1"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_gravity="fill"
+                android:layout_rowWeight="1"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/load_picture"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:adjustViewBounds="false"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/picture"
+                    android:onClick="uploadImage"
+                    android:contentDescription="Select image"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_gravity="fill"
+                android:layout_rowWeight="1"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/find_position"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:adjustViewBounds="false"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/find_position"
+                    android:onClick="findPosition"
+                    android:contentDescription="Find position"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_gravity="fill"
+                android:layout_rowWeight="1"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/enter_settings"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:adjustViewBounds="false"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/settings"
+                    android:onClick="enterSettings"
+                    android:contentDescription="Cancel computation"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_gravity="fill"
+                android:layout_rowWeight="1"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/waiting"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:adjustViewBounds="false"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/wait"/>
+            </LinearLayout>
+        </GridLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="fill"
+        android:layout_columnWeight="4"
+        android:orientation="vertical">
+
+        <GridLayout
+            android:id="@+id/grid_display"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:columnCount="1"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_gravity="fill"
+                android:layout_rowWeight="2"
+                android:orientation="vertical">
+
+                <com.jsibbold.zoomage.ZoomageView
+                    android:id="@+id/image_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/stars"
+                    app:zoomage_restrictBounds="false"
+                    app:zoomage_animateOnReset="true"
+                    app:zoomage_autoResetMode="UNDER"
+                    app:zoomage_autoCenter="true"
+                    app:zoomage_zoomable="true"
+                    app:zoomage_translatable="true"
+                    app:zoomage_minScale="0.6"
+                    app:zoomage_maxScale="8"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_gravity="fill"
+                android:layout_rowWeight="1"
+                android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/details_calcul"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scrollbars="vertical"
+                        android:gravity="bottom"
+                        android:text="Historique
+
+                Le principe du marathon Messier a été imaginé dans les années 1970 par plusieurs astronomes amateurs américains et espagnols dont Tom Hoffelder, Tom Reiland et Donald Machholz. Le premier ayant réussi à observer les 110 objets du catalogue en une nuit semble être Gerry Rattley dans la nuit du 23 au 24 mars 1985 à Dugas (Arizona), suivi une heure plus tard par Rick Hull depuis Anza (Californie). Différents clubs d'astronomie amateur d'Arizona organisent peu à peu leur propre marathon, jusqu'à ce que le concept gagne le reste du monde1,2.
+                Déroulement
+
+                Dans la pratique, un marathon Messier commence au crépuscule astronomique par les objets les plus bas à l'ouest, avant qu'ils ne disparaissent sous l'horizon. Les objets réputés les plus difficiles sont alors la galaxie M110 à côté de la galaxie d'Andromède (M31), et la galaxie du Triangle (M33). Tout au long de la nuit, l'observateur remonte la voûte céleste, continuant en général ses observations de la Poupe à Cassiopée, où sont essentiellement situés des amas ouverts et des nébuleuses diffuses comme la nébuleuse d'Orion (M42) ou les Pléiades (M45). Un troisième temps du Corbeau à la Grande Ourse permet d'observer des galaxies comme celles de l'amas de la Vierge, avant de se tourner vers les constellations du ciel d'été comprenant des amas ouverts et des nébuleuses diffuses, mais aussi des amas globulaires comme l'amas d'Hercule (M13) et des nébuleuses planétaires comme la nébuleuse de la Lyre (M57). Enfin, l'observateur finit sa course vers l'est, où il observe les derniers objets visibles avant la levée du soleil : M2, M30 M72 et M733,4.
+                Préparation
+                Matériel
+
+                Afin d'être prêt pour le marathon, il est utile de préparer ses observations. Une méthode simple consiste à utiliser un logiciel d'astronomie comme Stellarium ou une carte du ciel, et de préparer une liste des objets qui vont être observés.
+
+                De plus il est intéressant de préparer la liste en fonction de votre matériel. En effet, avec une paire de jumelles par exemple, certains objets vous seront inaccessibles car trop peu lumineux. Un télescope disposant d'un système de pointage automatique correctement mis en station permet également de ne pas passer de temps sur la recherche des objets. La liste peut également être agrémentée des oculaires à utiliser pour chaque objet en fonction de sa taille.
+
+                Finalement, les astronomes amateurs prennent l'habitude de noter leurs observations, voire de les dessiner.
+                Emplacement
+
+                Charles Messier ayant compilé son catalogue au niveau de l'hémisphère nord, tous les objets du catalogue ne sont pas visibles depuis l'hémisphère sud. En particulier, M52, M81, M82 et M103 restent difficiles d'accès pour les marathons Messier de l'hémisphère sud, car ils sont situés à une déclinaison de plus de 60° nord. Bien que le marathon Messier puisse être organisé depuis n'importe quelle latitude nord, les latitudes les plus basses sont les meilleures. En particulier, une latitude de 25° nord offre les meilleures conditions pour réaliser un marathon lorsque la période de l'année est bonne. Il est généralement conseillé de s'éloigner au maximum des villes et de toute source de pollution lumineuse, toujours dans l'objectif de voir les objets les plus ténus, notamment les galaxies.
+                Saison
+                Aux basses latitudes, particulièrement autour de la latitude 25° nord, il est possible d'observer tous les objets du catalogue Messier en une nuit pendant une fenêtre de quelques semaines, de la mi-mars au début du mois d'avril. Durant cette période, les nuits noires aux alentours d'une nouvelle Lune réunissent les meilleures conditions pour organiser un marathon Messier. Mais des Marathons Messier moins complets peuvent également être organisés à d'autres moments de l'année. Il existe en particulier une courte période autour de l'équinoxe d'automne où la plupart des objets Messier peuvent être observés. "
+                        android:background="@color/color_dark"
+                        android:textColor="@color/color_bright"/>
+            </LinearLayout>
+        </GridLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="fill"
+        android:layout_columnWeight="2"
+        android:orientation="vertical">
+
+
+        <GridLayout
+            android:id="@+id/grid_param_results"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:columnCount="1"
+            android:orientation="vertical">
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_gravity="fill"
+                android:layout_rowWeight="1"
+                android:elevation="4dp"
+                android:layout_margin="10dp">
+                <GridLayout
+                    android:id="@+id/grid_param"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:columnCount="1"
+                    android:padding="5dp"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_gravity="fill"
+                        android:layout_rowWeight="1">
+                        <TextView
+                            android:id="@+id/param"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:textStyle="bold"
+                            android:text="@string/settings_title" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_gravity="fill"
+                        android:layout_rowWeight="1">
+                        <TextView
+                            android:id="@+id/param_res"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:text="@string/settings_resolution" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_gravity="fill"
+                        android:layout_rowWeight="1">
+                        <TextView
+                            android:id="@+id/param_focale"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:text="@string/settings_focale" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_gravity="fill"
+                        android:layout_rowWeight="1">
+                        <TextView
+                            android:id="@+id/param_min_lum"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:text="@string/settings_min_lum" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_gravity="fill"
+                        android:layout_rowWeight="1">
+                        <TextView
+                            android:id="@+id/param_box_size"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:text="@string/settings_box_size" />
+                    </LinearLayout>
+                </GridLayout>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_gravity="fill"
+                android:layout_rowWeight="1"
+                android:elevation="4dp"
+                android:layout_margin="10dp">
+                <GridLayout
+                    android:id="@+id/grid_results"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:columnCount="1"
+                    android:padding="5dp"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_gravity="fill"
+                        android:layout_rowWeight="1">
+                        <TextView
+                            android:id="@+id/results"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:textStyle="bold"
+                            android:text="@string/results_title" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_gravity="fill"
+                        android:layout_rowWeight="1"
+                        android:orientation="vertical">
+                        <TextView
+                            android:id="@+id/AD"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:text="@string/results_ad"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_gravity="fill"
+                        android:layout_rowWeight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/Dec"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:text="@string/results_dec"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_gravity="fill"
+                        android:layout_rowWeight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/Rot"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:text="@string/results_rot" />
+                    </LinearLayout>
+                </GridLayout>
+            </androidx.cardview.widget.CardView>
+        </GridLayout>
+    </LinearLayout>
+</GridLayout>
+
+</LinearLayout>
